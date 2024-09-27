@@ -6,6 +6,8 @@
   <title>Управление задачами и поощрениями сотрудников</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js"></script>
+  <div id="notification" class="notification"></div>
+
 </head>
 <body>
 <header class="hero">
@@ -18,11 +20,59 @@
 
 <section class="subscription">
   <h2>Следите за новостями проекта</h2>
-  <p>Введите вашу почту, чтобы подписаться на обновления и получать уведомления о развитии проекта.</p>
+  <p>Введите вашу почту, чтобы подписаться на уведомления о развитии проекта.</p>
   <input type="email" id="emailInput" placeholder="Введите ваш email" required>
   <div id="subscriptionMessage"></div><br>
   <button id="subscribeButton" class="cta-button"><img src="img/podpisatsya_9m9s2k5duq47_32.png"> </button>
 </section>
+
+<section class="subscription-options">
+  <h2>Подписка на дополнительные услуги</h2>
+  <button id="subscribeOptionsButton" class="cta-button">Подписка</button>
+</section>
+
+
+<div id="subscribeModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeSubscribeModal">&times;</span>
+
+    <!-- Первый уровень: выбор действия -->
+    <div id="step1">
+      <h2>Выберите действие</h2>
+      <button id="subscribeNewButton" class="cta-button">Оформить подписку</button>
+      <button id="renewSubscriptionButton" class="cta-button">Продлить подписку</button>
+    </div>
+
+    <!-- Второй уровень: оформление подписки -->
+    <div id="step2-subscribe" class="modal-step" style="display:none;">
+      <h3>Оформить подписку</h3>
+      <label for="subscriptionMonths">Выберите срок (месяцев):</label>
+      <input type="range" id="subscriptionMonths" min="1" max="12" value="6">
+      <span id="monthDisplay">6</span> месяцев
+      <br><br>
+      <label for="phoneInput">Введите номер телефона:</label>
+      <input type="tel" id="phoneInput" placeholder="Введите номер телефона" required>
+      <button id="nextToSummaryFromSubscribe" class="cta-button">Далее</button>
+    </div>
+
+
+    <div id="step2-renew" class="modal-step" style="display:none;">
+      <h3>Продлить подписку</h3>
+      <label for="phoneRenewInput">Введите номер телефона:</label>
+      <input type="tel" id="phoneRenewInput" placeholder="Введите номер телефона" required>
+      <button id="nextToSummaryFromRenew" class="cta-button">Далее</button>
+    </div>
+
+
+    <div id="step3-summary" class="modal-step" style="display:none;">
+      <h3>Подтверждение</h3>
+      <p id="summaryText"></p>
+      <button id="confirmSubscription" class="cta-button">Подтвердить подписку</button>
+    </div>
+
+    <div id="modalResultMessage"></div>
+  </div>
+</div>
 
 <section class="features">
   <h2>Основные возможности</h2>

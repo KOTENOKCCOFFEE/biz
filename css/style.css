@@ -92,8 +92,9 @@ footer {
 footer p {
   margin: 0;
 }
+
 .modal {
-  display: none; /* Изначально скрыто */
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -106,13 +107,10 @@ footer p {
 }
 
 .modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  max-width: 400px;
-  text-align: center;
-  margin: auto;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 15px auto;
+  width: 80%;
+  padding: 10px;
 }
 
 .close {
@@ -142,11 +140,31 @@ input[type="email"], select {
   margin-top: 10px;
   font-size: 16px;
 }
+
+/* Центрирование блока "Подписка на дополнительные услуги" */
+.subscription-options {
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.modal-step {
+  display: none;
+}
+
+#subscriptionMonths {
+  width: 100%;
+}
+
+#monthDisplay {
+  font-weight: bold;
+}
+
 /* Общие стили для котиков */
 .side-cat {
-  position: absolute; /* Позиционирование относительно страницы */
-  width: 10vw; /* Размер котиков будет 10% от ширины экрана */
-  z-index: 100; /* Поверх основного контента */
+  position: absolute;
+  width: 10vw;
+  z-index: 100;
 }
 
 /* Левый котик */
@@ -166,10 +184,10 @@ input[type="email"], select {
 /* Медиазапросы для корректировки на мобильных устройствах */
 @media (max-width: 768px) {
   .side-cat {
-    width: 15vw; /* Увеличим размер котиков на мобильных устройствах */
+    width: 15vw;
   }
 
   .side-cat-left, .side-cat-right {
-    top: 75vh; /* Опустим их еще немного на мобильных устройствах */
+    top: 75vh;
   }
 }
